@@ -42,6 +42,37 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Usage
+There are 2 differente options to send email, with or without html tags.
+
+### HTML Email
+```shell
+curl --location --request POST 'http://localhost:3000/email' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "to":"RECEIVER_EMAIL",
+    "from":"SENDER_EMAIL",
+    "name": "SENDER_NAME",
+    "subject":"EMAIL_SUBJECT",
+    "message":"<h1>HTML MESSAGE</h1>",
+    "isHtml": true
+}'
+```
+
+### Plain Text
+```shell
+curl --location --request POST 'http://localhost:3000/email' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "to":"RECEIVER_EMAIL",
+    "from":"SENDER_EMAIL",
+    "name": "SENDER_NAME",
+    "subject":"EMAIL_SUBJECT",
+    "message":"PLAIN TEXT",
+    "isHtml": false
+}'
+```
+
 
 ## Disclaimer
 Only use this tool for education, research, or in the course of approved social engineering assessments. While email spoofing is a powerful tool in the social engineer's arsenal, it is also trivial to identify the server that sent any email. Furthermore, this tool makes no claims to bypass any products such as Barracuda or ForcePoint email protections suites. Please use responsibly.
