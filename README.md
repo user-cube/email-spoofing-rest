@@ -1,10 +1,27 @@
 # email-spoofing-rest
 Simple REST API to send spoofed emails.
 
+## Install
+The application uses NodeJS (NestJS Framework) so we need to clone the repo and install the necessary node modules:
+```shell
+$ git clone https://github.com/user-cube/email-spoofing-rest
+$ cd email-spoofing-rest
+$ npm i
+```
+
+## Environment Variables
+The application needs only 3 envrionment variables, here a possible `.env` file:
+
+```dotenv
+SMTP_HOST = localhost
+SMTP_PORT = 25
+PORT = 3000
+```
+
 ## Postfix Relay
 To use postfix relay on docker run the following command:
 ```shell
-docker container run \
+$ docker container run \
     -e MAIL_RELAY_HOST='SMTP_HOST' \
     -e MAIL_RELAY_PORT='25' \
     -e MAIL_RELAY_USER='SMTP_USER' \
