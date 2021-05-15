@@ -43,7 +43,7 @@ $ npm run start:prod
 ```
 
 ## Usage
-There are 2 differente options to send email, with or without html tags.
+There are 2 different options to send email, with or without html tags.
 
 ### HTML Email
 ```shell
