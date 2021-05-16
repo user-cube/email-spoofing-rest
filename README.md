@@ -6,7 +6,7 @@ The application uses NodeJS (NestJS Framework) so we need to clone the repo and 
 ```shell
 $ git clone https://github.com/user-cube/email-spoofing-rest
 $ cd email-spoofing-rest
-$ npm i
+$ npm install
 ```
 
 ### Environment Variables
@@ -71,6 +71,12 @@ curl --location --request POST 'http://localhost:3000/email' \
     "message":"PLAIN TEXT",
     "isHtml": false
 }'
+```
+
+## Run on docker
+```shell
+$ docker pull ruicoelho43/email-spoofing:latest
+$ docker run -d -p 3000:3000 -e PORT=3000 -e SMTP_HOST=localhost -e SMTP_PORT=25 ruicoelho43/email-spoofing:latest
 ```
 
 
