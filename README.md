@@ -92,9 +92,12 @@ $ docker run -d -p 3000:3000 -e PORT=3000 -e SMTP_HOST=localhost -e SMTP_PORT=25
 ```
 More information about docker images available on [Dockerhub](https://hub.docker.com/r/ruicoelho43/email-spoofing)
 
+## Swagger
+Swagger is available on endpoint `http://<host>:<port>/swagger-ui/#/`.
+
+![Swagger](./docs/swagger/swagger.png)
 
 ## Disclaimer
 Only use this tool for education, research, or in the course of approved social engineering assessments. While email spoofing is a powerful tool in the social engineer's arsenal, it is also trivial to identify the server that sent any email. Furthermore, this tool makes no claims to bypass any products such as Barracuda or ForcePoint email protections suites. Please use responsibly.
-
 ## Author
 * [Rui Coelho](https://ruicoelho.pt/)
