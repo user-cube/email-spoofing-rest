@@ -2,7 +2,7 @@
 Simple REST API to send spoofed emails.
 
 ## Install
-The application uses NodeJS (NestJS Framework) so we need to clone the repo and install the necessary node modules:
+The application uses NodeJS (NestJS Framework), so we need to clone the repo and install the necessary node modules:
 ```shell
 $ git clone https://github.com/user-cube/email-spoofing-rest
 $ cd email-spoofing-rest
@@ -10,7 +10,7 @@ $ npm install
 ```
 
 ### Environment Variables
-The application needs only 3 envrionment variables, here a possible `.env` file:
+The application needs only 3 environment variables, here a possible `.env` file:
 
 ```dotenv
 SMTP_HOST = localhost
@@ -73,11 +73,24 @@ curl --location --request POST 'http://localhost:3000/email' \
 }'
 ```
 
+### With file
+```shell
+curl --location --request POST 'http://localhost:3000/email/file' \
+--form 'to="RECEIVER_EMAIL"' \
+--form 'from="SENDER_EMAIL"' \
+--form 'name="SENDER_NAME"' \
+--form 'subject="EMAIL_SUBJECT"' \
+--form 'message="<h1>Message</h1>"' \
+--form 'isHtml="true"' \
+--form 'file=@"/path/to/file"'
+```
+
 ## Run on docker
 ```shell
 $ docker pull ruicoelho43/email-spoofing:latest
 $ docker run -d -p 3000:3000 -e PORT=3000 -e SMTP_HOST=localhost -e SMTP_PORT=25 ruicoelho43/email-spoofing:latest
 ```
+More information about docker images available on [Dockerhub](https://hub.docker.com/r/ruicoelho43/email-spoofing)
 
 
 ## Disclaimer
